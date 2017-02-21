@@ -8,12 +8,17 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+import time
+
 
 BOT_NAME = 'scrapy_project'
 
 SPIDER_MODULES = ['scrapy_project.spiders']
 NEWSPIDER_MODULE = 'scrapy_project.spiders'
 
+# Logging
+LOG_FILE = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()) + '.log'
+LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapy_project (+http://www.yourdomain.com)'

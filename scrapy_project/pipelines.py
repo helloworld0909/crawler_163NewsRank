@@ -29,6 +29,6 @@ class NewsRankPipeline(object):
     def process_item(self, item, spider):
         col = ','.join(item.keys())
         placeholders = ','.join(len(item) * ['%s'])
-        sql = 'insert into news_rank({}) values({})'
+        sql = 'insert into ignore news_rank({}) values({})'
         self.cur.execute(sql.format(col, placeholders), item.values())
         return item
